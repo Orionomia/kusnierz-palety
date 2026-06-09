@@ -1,0 +1,175 @@
+---
+---
+
+<section class="section contact" id="kontakt">
+  <div class="container">
+
+    <div class="contact-header">
+      <p class="tag">Skontaktuj się</p>
+      <h2 class="display contact-title">Zadzwoń<br />lub Napisz</h2>
+      <p class="contact-intro">
+        Odpowiadamy szybko na wszystkie zapytania.
+        Zapraszamy do kontaktu telefonicznego lub mailowego – wycena bezpłatna.
+      </p>
+    </div>
+
+    <div class="contact-cards">
+
+      <a href="tel:+48888966017" class="contact-card contact-card--link">
+        <div class="contact-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.41 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l.87-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="contact-card-label">Telefon · Waldemar Kuśnierz</p>
+          <p class="contact-card-value">+48 888 966 017</p>
+        </div>
+      </a>
+
+      <a href="mailto:palety.koscierzyna@gmail.com" class="contact-card contact-card--link">
+        <div class="contact-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div>
+          <p class="contact-card-label">E-mail</p>
+          <p class="contact-card-value">palety.koscierzyna@gmail.com</p>
+        </div>
+      </a>
+
+      <div class="contact-card">
+        <div class="contact-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div>
+          <p class="contact-card-label">Lokalizacja</p>
+          <p class="contact-card-value">Kościerzyna, Polska</p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+        <div>
+          <p class="contact-card-label">Godziny pracy</p>
+          <p class="contact-card-value">Pon – Pt: 7:00 – 17:00</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.contact {
+  background: var(--bark);
+  position: relative;
+  overflow: hidden;
+}
+.contact::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(240,170,48,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.contact::after {
+  content: '';
+  position: absolute;
+  bottom: -180px; left: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(59,42,26,0.6) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-header {
+  max-width: 600px;
+  margin-bottom: 56px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-title {
+  font-size: clamp(50px, 5.5vw, 80px);
+  margin-bottom: 16px;
+}
+
+.contact-intro {
+  font-size: 17px;
+  color: rgba(253,250,246,0.55);
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 28px 24px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(240,170,48,0.15);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), background var(--transition);
+  text-decoration: none;
+  color: inherit;
+}
+.contact-card:hover {
+  border-color: rgba(240,170,48,0.4);
+  background: rgba(240,170,48,0.06);
+}
+
+.contact-card-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(240,170,48,0.12);
+  border: 1px solid rgba(240,170,48,0.2);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--oak-light);
+  flex-shrink: 0;
+}
+.contact-card-icon svg { width: 20px; height: 20px; }
+
+.contact-card-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(253,250,246,0.35);
+  margin-bottom: 6px;
+}
+
+.contact-card-value {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+  word-break: break-all;
+}
+
+@media (max-width: 640px) {
+  .contact-cards { grid-template-columns: 1fr; }
+}
+</style>

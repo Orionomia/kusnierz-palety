@@ -1,0 +1,55 @@
+---
+const items = [
+  'Palety Euro',
+  'Palety Przemysłowe',
+  'Palety Jednorazowe',
+  'Skup Palet',
+  'Naprawa Palet',
+  'Duże Zaplecze Magazynowe',
+  'Szybka Obsługa',
+  'Konkurencyjne Ceny',
+];
+---
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    {[...items, ...items].map((item) => (
+      <span class="ticker-item">
+        {item}
+        <svg class="ticker-dot" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="3"/></svg>
+      </span>
+    ))}
+  </div>
+</div>
+
+<style>
+.ticker {
+  background: var(--oak);
+  overflow: hidden;
+  padding-block: 13px;
+  border-block: 1px solid var(--oak-dark);
+}
+.ticker-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: ticker 26s linear infinite;
+}
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding-inline: 20px;
+  font-family: var(--font-display);
+  font-size: 19px;
+  letter-spacing: 0.08em;
+  color: var(--charcoal);
+  white-space: nowrap;
+}
+.ticker-dot {
+  width: 7px;
+  height: 7px;
+  opacity: 0.35;
+  flex-shrink: 0;
+}
+</style>

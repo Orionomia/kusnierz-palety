@@ -1,0 +1,116 @@
+---
+const features = [
+  {
+    icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
+    title: 'Profesjonalna obsługa',
+    desc: 'Indywidualne podejście do każdego klienta, rzetelna wycena i pełne doradztwo w wyborze odpowiednich palet.',
+  },
+  {
+    icon: `<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>`,
+    title: 'Terminowe dostawy',
+    desc: 'Zawsze dotrzymujemy ustalonych terminów. Realizacja zamówień nawet w ciągu 24 godzin od potwierdzenia.',
+  },
+  {
+    icon: `<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>`,
+    title: 'Konkurencyjne ceny',
+    desc: 'Najlepsza relacja jakości do ceny na rynku regionalnym i ogólnopolskim. Rabaty dla stałych klientów i dużych zamówień.',
+  },
+  {
+    icon: `<polyline points="3 17 8 12 13 15 21 7"/><polyline points="15 7 21 7 21 13"/>`,
+    title: 'Wieloletnie doświadczenie',
+    desc: 'Ponad 10 lat na rynku. Setki zadowolonych klientów z branży produkcyjnej, handlowej i logistycznej.',
+  },
+];
+---
+
+<section class="section why" id="o-nas">
+  <div class="container why-inner">
+    <!-- Text content -->
+    <div class="why-content">
+      <p class="tag">Dlaczego my?</p>
+      <h2 class="display why-title">Solidność<br />i Doświadczenie</h2>
+      <p class="why-intro">
+        Od ponad dekady budujemy zaufanie klientów na terenie całej Polski.
+        Każde zamówienie traktujemy priorytetowo.
+      </p>
+
+      <ul class="features-list" role="list">
+        {features.map((f) => (
+          <li class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <Fragment set:html={f.icon} />
+              </svg>
+            </div>
+            <div class="feature-body">
+              <h3 class="feature-title">{f.title}</h3>
+              <p class="feature-desc">{f.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.why { background: var(--charcoal-2); }
+
+.why-inner {
+  display: block;
+  max-width: 860px;
+}
+
+/* ── Content ── */
+.why-title { font-size: clamp(50px, 5vw, 72px); margin-bottom: 20px; }
+.why-intro {
+  font-size: 18px;
+  color: var(--muted);
+  font-weight: 300;
+  max-width: 440px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.features-list { display: flex; flex-direction: column; gap: 6px; }
+.feature {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 22px 20px;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), background var(--transition);
+}
+.feature:hover {
+  border-color: rgba(240,170,48,0.25);
+  background: rgba(240,170,48,0.04);
+}
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(240,170,48,0.1);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--oak);
+  flex-shrink: 0;
+}
+.feature-icon svg { width: 18px; height: 18px; }
+.feature-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--white);
+  margin-bottom: 5px;
+}
+.feature-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+
+</style>
